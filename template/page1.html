@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Prediction</title>
+    <style>
+        h1 {
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 500;
+            
+            background-image: linear-gradient(to bottom left, #793c9a, #ee2bba);
+            color: transparent;
+            background-clip: text;
+            text-align: center;
+            color:white;
+            animation: animateText 1.5s ease-in-out forwards;
+            font-family: 'Roboto Condensed',sans-serif;
+            font-weight: bold;
+            
+        }
+        @keyframes animateText
+        {
+            from{
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            to{
+                opacity:1;
+                transform: scale(1.05);
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;  /* Light gray background */
+            background-image: url("https://img.freepik.com/free-vector/blue-coronavirus-covid-19-pandemic-outbreak-background-design_1017-24425.jpg?size=626&ext=jpg");
+            background-size:cover;
+            background-position: center;
+        }
+       
+        #prediction-form {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            width: 400px;
+            background-color: #fff; /* White background for the form */
+            transform : translateX(0px);
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .prediction-form p {
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .prediction-form label {
+            display: block;
+            margin-bottom: 10px;
+            padding-right: 15px;
+            font-size: large;
+            font-family: 'Roboto Condensed',sans-serif;
+            font-weight: bold;
+        }
+
+        .prediction-form input[type="file"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            padding-left: 70px;
+            font-size: large;
+            align-items: center;
+        }
+
+        .prediction-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: large;
+            transition: background-color 0.2s ease-in-out;
+            font-family: 'Roboto Condensed',sans-serif;
+            font-weight: bold;
+        }
+
+        .prediction-form button:hover {
+            background-color: #45a049;
+            animation-play-state:  paused;
+            transform: translateX(5px);
+            box-shadow: 0 0 5px #45a049,0 0 25px #45a049, 0 0 50px #000000, 0 0 100px #000000 inset;
+        }
+        @media(max-width: 768px)
+        {
+            h1{
+                font-size:36px;
+            }
+            #prediction-form{
+                width:90%;
+            }
+            .prediction-form label,
+            .prediction-form input[type='file'],
+            .prediction-form button{
+                font-size: medium;
+            }
+        }
+        @media (max-width:480px){
+            h1{
+                font-size: 28px;
+            }
+            .prediction-form label
+            {
+                padding-right: 5px;
+            }
+        }
+
+        #image {
+            display: block; 
+            margin: 0 auto; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>COVID-19 Prediction</h1>
+    </header>
+    <center>
+        <form id="prediction-form" method="POST" enctype="multipart/form-data" action="/">
+            <section class="prediction-form">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image"><br>
+                <button type="submit">Predict</button>
+            </section>
+        </form>
+    </center>
+
+   </body>
+</html>
