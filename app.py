@@ -1,5 +1,5 @@
 import pickle
-import tensorflow
+
 
 from flask import Flask,render_template,request
 import cv2,os
@@ -62,5 +62,3 @@ def upload_file():
         return render_template('second_page.html', predicted_class=predicted_class)
     return render_template('page1.html')
 
-if __name__ == '_main_':
-  app.run(debug=True)
