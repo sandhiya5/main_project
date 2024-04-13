@@ -49,14 +49,7 @@ def upload_file():
         if image.filename.split('.')[-1].lower() not in allowed_extensions:
             return render_template('error.html', message="Invalid image format")
 
-        # Save the file locally with a unique filename
-        filename = f"{int(time.time())}.{image.filename.split('.')[-1]}"  # Use timestamp and extension
-        app.config['UPLOAD_FOLDER'] = 'upload_folder'  # Replace with your desired folder name
-
         
-        image_path = os.path.join(r'C:\Users\DELL\OneDrive\Desktop\New folder (3)\upload_folder', filename)
-        image.save(image_path)
-
         # Use the image path for model prediction
         predicted_class = classify_single_image(image_path)
         return render_template('second_page.html', predicted_class=predicted_class)
