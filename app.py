@@ -24,7 +24,8 @@ model = load_pickle(r"model.pkl")
 # Function to classify a single image
 def classify_single_image(image_path):
     # Read the image
-    img = cv2.imread(image_path)
+    #img = cv2.imread(image_path)
+    img = cv2.imdecode(np.fromstring(image_path.read(),np.uint8),cv2.IMREAD_COLOR)
     # Resize the image to match the desired input shape
     resized_img = cv2.resize(img, (224, 224))
     # Preprocess the image
